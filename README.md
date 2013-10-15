@@ -25,3 +25,7 @@ default/stm32l100.hex
 You may need to tweak the path for the newlib-nano, under-  
 Project->Build Options->Search directories
 ![search_dirs](https://raw.github.com/noahp/stm32l1_discovery/master/search_directories.png)
+
+6. To load the hex file to the STM332L1 Discovery board, you'll need the st-link drivers & software-  
+http://www.st.com/web/catalog/tools/FM146/CL1984/SC724/SS1677/PF251168  
+![stlink_window](https://raw.github.com/noahp/stm32l1_discovery/master/stlink.png)

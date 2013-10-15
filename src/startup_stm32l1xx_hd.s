@@ -4,7 +4,7 @@
   * @author    MCD Application Team
   * @version   V1.2.1
   * @date      19-June-2013
-  * @brief     STM32L1xx Ultra Low Power High-density Devices vector table for 
+  * @brief     STM32L1xx Ultra Low Power High-density Devices vector table for
   *            RIDE7 toolchain.
   *            This module performs:
   *                - Set the initial SP
@@ -25,8 +25,8 @@
   *
   *        http://www.st.com/software_license_agreement_liberty_v2
   *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   * See the License for the specific language governing permissions and
   * limitations under the License.
@@ -42,10 +42,10 @@
 .global g_pfnVectors
 .global Default_Handler
 
-/* start address for the initialization values of the .data section. 
+/* start address for the initialization values of the .data section.
 defined in linker script */
 .word _sidata
-/* start address for the .data section. defined in linker script */  
+/* start address for the .data section. defined in linker script */
 .word _sdata
 /* end address for the .data section. defined in linker script */
 .word _edata
@@ -59,7 +59,7 @@ defined in linker script */
  * @brief  This is the code that gets called when the processor first
  *          starts execution following a reset event. Only the absolutely
  *          necessary set is performed, after which the application
- *          supplied main() routine is called. 
+ *          supplied main() routine is called.
  * @param  None
  * @retval : None
 */
@@ -69,7 +69,7 @@ defined in linker script */
   .type Reset_Handler, %function
 Reset_Handler:
 
-/* Copy the data segment initializers from flash to SRAM */  
+/* Copy the data segment initializers from flash to SRAM */
   movs r1, #0
   b LoopCopyDataInit
 
@@ -78,7 +78,7 @@ CopyDataInit:
   ldr r3, [r3, r1]
   str r3, [r0, r1]
   adds r1, r1, #4
-    
+
 LoopCopyDataInit:
   ldr r0, =_sdata
   ldr r3, =_edata
@@ -87,11 +87,11 @@ LoopCopyDataInit:
   bcc CopyDataInit
   ldr r2, =_sbss
   b LoopFillZerobss
-/* Zero fill the bss segment. */  
+/* Zero fill the bss segment. */
 FillZerobss:
   movs r3, #0
   str r3, [r2], #4
-    
+
 LoopFillZerobss:
   ldr r3, = _ebss
   cmp r2, r3
@@ -104,12 +104,12 @@ LoopFillZerobss:
 .size Reset_Handler, .-Reset_Handler
 
 /**
- * @brief  This is the code that gets called when the processor receives an 
+ * @brief  This is the code that gets called when the processor receives an
  *         unexpected interrupt.  This simply enters an infinite loop, preserving
  *         the system state for examination by a debugger.
  *
- * @param  None     
- * @retval None       
+ * @param  None
+ * @retval None
 */
     .section .text.Default_Handler,"ax",%progbits
 Default_Handler:
@@ -121,12 +121,12 @@ Infinite_Loop:
 * The minimal vector table for a Cortex M3. Note that the proper constructs
 * must be placed on this to ensure that it ends up at physical address
 * 0x0000.0000.
-*******************************************************************************/    
+*******************************************************************************/
   .section .isr_vector,"a",%progbits
   .type g_pfnVectors, %object
   .size g_pfnVectors, .-g_pfnVectors
-    
-    
+
+
 g_pfnVectors:
   .word _estack
   .word Reset_Handler
@@ -206,17 +206,17 @@ g_pfnVectors:
   .word 0
   .word 0
   .word 0
-  .word BootRAM          /* @0x108. This is for boot in RAM mode for 
+  .word BootRAM          /* @0x108. This is for boot in RAM mode for
                             STM32L15x ULtra Low Power High-density devices. */
-   
+
 /*******************************************************************************
 *
-* Provide weak aliases for each Exception handler to the Default_Handler. 
-* As they are weak aliases, any function with the same name will override 
+* Provide weak aliases for each Exception handler to the Default_Handler.
+* As they are weak aliases, any function with the same name will override
 * this definition.
 *
 *******************************************************************************/
-    
+
   .weak NMI_Handler
   .thumb_set NMI_Handler,Default_Handler
 
@@ -318,7 +318,7 @@ g_pfnVectors:
 
   .weak LCD_IRQHandler
   .thumb_set LCD_IRQHandler,Default_Handler
-  
+
   .weak TIM9_IRQHandler
   .thumb_set TIM9_IRQHandler,Default_Handler
 
@@ -384,7 +384,7 @@ g_pfnVectors:
 
   .weak TIM5_IRQHandler
   .thumb_set TIM5_IRQHandler,Default_Handler
-  
+
   .weak SPI3_IRQHandler
   .thumb_set SPI3_IRQHandler,Default_Handler
 
@@ -393,7 +393,7 @@ g_pfnVectors:
 
   .weak UART5_IRQHandler
   .thumb_set UART5_IRQHandler,Default_Handler
-  
+
   .weak DMA2_Channel1_IRQHandler
   .thumb_set DMA2_Channel1_IRQHandler,Default_Handler
 
@@ -414,6 +414,6 @@ g_pfnVectors:
 
   .weak COMP_ACQ_IRQHandler
    .thumb_set COMP_ACQ_IRQHandler,Default_Handler
-  
+
 /************************* (C) COPYRIGHT STMicroelectronics *****END OF FILE***/
 

@@ -17,23 +17,147 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-O2" />
 			<Add option="-Wall" />
 			<Add option="-g" />
-			<Add option="-O2" />
-			<Add option="-fno-common" />
-			<Add option="-mcpu=arm7tdmi" />
+			<Add option="-O0 -ggdb -Wall -fno-strict-aliasing -fmessage-length=0 -fno-builtin -mthumb -mcpu=cortex-m3 -flto -ffunction-sections -fdata-sections" />
 			<Add option="-DEK_AT91SAM7A3" />
 			<Add option="-D__NO_CTOR_DTOR_SUPPORT__" />
 			<Add option="-DUSE_IRQ" />
 			<Add directory="src" />
-			<Add directory="h" />
+			<Add directory="src/STM32L1xx_StdPeriph_Driver/inc" />
+			<Add directory="C:/Program Files (x86)/GNU Tools ARM Embedded/4.7 2013q3/arm-none-eabi/lib" />
 		</Compiler>
 		<Linker>
 			<Add option="-s" />
-			<Add option="-Wl,-Map,map.txt" />
-			<Add option="-mcpu=arm7tdmi" />
-			<Add option="-T ld/target.ld" />
+			<Add option="-specs=nano.specs -Wl,-gc-sections,-Tsrc/STM32_FLASH.ld" />
 		</Linker>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/misc.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_adc.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_aes.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_comp.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_crc.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_dac.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_dbgmcu.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_dma.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_exti.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_flash.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_fsmc.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_gpio.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_i2c.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_iwdg.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_lcd.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_opamp.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_pwr.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_rcc.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_rtc.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_sdio.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_spi.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_syscfg.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_tim.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_usart.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_wwdg.h" />
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/misc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_adc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_aes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_aes_util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_comp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_crc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dac.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dbgmcu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_exti.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_flash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_flash_ramfunc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_fsmc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_i2c.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_iwdg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_lcd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_opamp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_pwr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_rcc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_rtc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_sdio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_spi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_syscfg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_tim.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_usart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_wwdg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/STM32_FLASH.ld" />
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main.h" />
+		<Unit filename="src/startup_stm32l1xx_hd.s" />
+		<Unit filename="src/stm32l100c_discovery.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32l100c_discovery.h" />
+		<Unit filename="src/stm32l1xx.h" />
+		<Unit filename="src/stm32l1xx_conf.h" />
+		<Unit filename="src/stm32l1xx_it.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stm32l1xx_it.h" />
+		<Unit filename="src/system_stm32l1xx.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/system_stm32l1xx.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

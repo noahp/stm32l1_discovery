@@ -23,7 +23,7 @@ Also set the C compiler to "arm-none-eabi-gcc.exe" (sans quotes of course), and 
 
 5. Open the codeblocks project file, stm32l100.cbp, and rebuild all (ctrl+f11).
 Assuming that works, there should be a brand-new output file:  
-default/stm32l100.hex
+default/stm32l100.hex  
 You may need to tweak the path for the newlib-nano, under-  
 Project->Build Options->Search directories
 ![search_dirs](https://raw.github.com/noahp/stm32l1_discovery/master/search_directories.png)

@@ -1,4 +1,4 @@
-gcc-arm-embedded for STM32L1 Discovery Kit
+gcc-arm-embedded and Codeblocks for STM32L1 Discovery Kit
 =====
 
 Runs blinky example from http://www.st.com/web/en/catalog/tools/PF259096  

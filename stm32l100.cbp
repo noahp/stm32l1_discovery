@@ -32,6 +32,9 @@
 			<Add option="-s" />
 			<Add option="-specs=nano.specs -Wl,-gc-sections,-Tsrc/STM32_FLASH.ld" />
 		</Linker>
+		<ExtraCommands>
+			<Add after="arm-none-eabi-objcopy -I elf32-little -O ihex default/stm32l100.elf default/stm32l100.hex" />
+		</ExtraCommands>
 		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/misc.h" />
 		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_adc.h" />
 		<Unit filename="src/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_aes.h" />

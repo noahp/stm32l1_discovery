@@ -16,9 +16,12 @@ http://www.codeblocks.org/downloads/26
 Go to Settings->Compiler..., select "GNU ARM GCC Compiler" in the dropdown.  
 Select the "Toolchain executables" tab and set the installation directory to the bin directory for the gcc-arm tools.  
 Also set the C compiler to "arm-none-eabi-gcc.exe" (sans quotes of course), and both linkers to arm-none-eabi-gcc.exe (same).
+![compiler_settings](https://raw.github.com/noahp/stm32l1_discovery/master/compiler_settings.png)
+
 
 5. Open the codeblocks project file, stm32l100.cbp, and rebuild all (ctrl+f11).
 Assuming that works, there should be a brand-new output file:  
 default/stm32l100.hex
 You may need to tweak the path for the newlib-nano, under-  
 Project->Build Options->Search directories
+![search_dirs](https://raw.github.com/noahp/stm32l1_discovery/master/search_directories.png)

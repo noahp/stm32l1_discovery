@@ -3,6 +3,8 @@ gcc-arm-embedded and Codeblocks for STM32L1 Discovery Kit
 
 Runs blinky example from http://www.st.com/web/en/catalog/tools/PF259096  
 
+The following instructions are specifically for Windows, but can be modfified for Linux without too much trouble (except the stlink interface).  
+
 1. Download & install gcc-arm-embedded toolchain-  
 https://launchpad.net/gcc-arm-embedded/4.7/4.7-2013-q3-update/+download/gcc-arm-none-eabi-4_7-2013q3-20130916-win32.exe
 
